@@ -2,6 +2,7 @@
 
 import { useWallet } from '@meshsdk/react';
 import { WalletList } from '@/components/Home/WalletList';
+import { WalletInfo } from '@/components/Home/WalletInfo';
 
 export default function Home() {
   const { connected } = useWallet();
@@ -11,6 +12,9 @@ export default function Home() {
       <h1>Ví Cardano của tôi</h1>
 
       {!connected && <WalletList/>}
+
+      {connected && <WalletInfo/>}
+
     </div>
   )
 }

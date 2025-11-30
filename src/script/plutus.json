@@ -1,0 +1,77 @@
+{
+  "preamble": {
+    "title": "nang/lock-unlock",
+    "description": "Aiken contracts for project 'nang/lock-unlock'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.19+e525483"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "vesting.vesting.spend",
+      "datum": {
+        "title": "datum_opt",
+        "schema": {
+          "$ref": "#/definitions/vesting~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "59017601010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cdc3a400530070024888966002600460106ea800e2646644b30013370e900018059baa0018cc004c038c030dd5000c8c03cc040c040c040c040c040c040c040c04000644646600200200644b30010018a508acc004cdc79bae30120010038a518998010011809800a01c40449112cc004cc004dd6180118079baa007375c6022601e6ea800e2946264b3001330023758600660206ea8020dd7180098081baa0048991919912cc004c03400a264b3001300e30143754600c602a6ea8c05cc054dd5002c4cdc4001000c4cdc4801000a026375a602c60286ea800e2b30013370e900000145284528a024404860226ea8004dd6980a180a980a98091baa006301330113754602660226ea8004c048c04cc04cc04cc04cc04cc04cc04cc040dd50044528201c23012301300140348b2014300c001300c300d0013009375400716401c30070013003375400f149a26cac8009",
+      "hash": "07aadc6acc1b0505dbfdf3825dd6809b09fc8358aad1ed72f18f760a"
+    },
+    {
+      "title": "vesting.vesting.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59017601010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cdc3a400530070024888966002600460106ea800e2646644b30013370e900018059baa0018cc004c038c030dd5000c8c03cc040c040c040c040c040c040c040c04000644646600200200644b30010018a508acc004cdc79bae30120010038a518998010011809800a01c40449112cc004cc004dd6180118079baa007375c6022601e6ea800e2946264b3001330023758600660206ea8020dd7180098081baa0048991919912cc004c03400a264b3001300e30143754600c602a6ea8c05cc054dd5002c4cdc4001000c4cdc4801000a026375a602c60286ea800e2b30013370e900000145284528a024404860226ea8004dd6980a180a980a98091baa006301330113754602660226ea8004c048c04cc04cc04cc04cc04cc04cc04cc040dd50044528201c23012301300140348b2014300c001300c300d0013009375400716401c30070013003375400f149a26cac8009",
+      "hash": "07aadc6acc1b0505dbfdf3825dd6809b09fc8358aad1ed72f18f760a"
+    }
+  ],
+  "definitions": {
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "aiken/crypto/VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "vesting/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            },
+            {
+              "title": "beneficiary",
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            },
+            {
+              "title": "lock_until",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

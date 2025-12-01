@@ -9,7 +9,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Ví Cardano của tôi</h1>
 
       {!connected && <WalletList/>}
 
